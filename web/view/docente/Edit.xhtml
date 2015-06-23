@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Editar Docente</title>
+        <meta name="viewport" content="width=device-width"/>
+    </h:head>
+    <h:body>
+
+        <p:layout fullPage="true">
+
+            <p:layoutUnit position="center">
+
+                
+                
+                <p:messages  showDetail="false" autoUpdate="true" closable="true" />
+
+                <h:form>
+
+                    <p:panel header="Editar um docente" style="width:370px;height:200px; position: relative; left: 500px;">  
+                        <h:panelGrid columns="2" id="grid">  
+
+                           <h:outputLabel value="Nome : *"></h:outputLabel>  
+                            <p:inputText style="position: relative; right: 100px" value="#{docenteController.docente.nome}" id="txt_title"   
+                                      title="Você deve inserir o nome de um docente com pelo menos 2 caracteres">
+                    
+                            </p:inputText>
+                            <p:tooltip for="txt_title" showEvent="focus" hideEvent="blur" /> 
+                            
+                            <br/>
+                          
+                            
+
+
+                            <p:commandButton style="width: 180px; height: 40px; font-size: small; position: relative; top: 15px; left: 90px" iconPos="center" ajax="false"  
+                                             value="Editar Docente" actionListener="#{docenteController.update()}"
+                                             update="grid"> 
+                            </p:commandButton>
+
+                        </h:panelGrid>  
+                    </p:panel>
+
+                    
+                    <p:panel style="position: relative;border-color: transparent; top: 30px; text-align: center; right: 15px">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <p:commandButton icon="ui-icon-document" style="width: 270px" value="Ver todos os docentes" ajax="false" action="List" onclick="this.form.target='_self'"/>
+                        <br/>
+                        <br/>
+                        <p:commandButton icon="ui-icon-arrowrefresh-1-w" style="width: 270px" value="Voltar ao índice" ajax="false" action="/index" onclick="this.form.target='_self'"/>
+                               
+                    </p:panel>
+                    
+                    
+                    
+                    
+                </h:form>
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>

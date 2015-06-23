@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+        <f:view>
+
+            <h:form style="background-color: transparent">
+
+                
+
+                <p:panel id="conpnl" header="Index"  style="width:280px;height:300px; border-color: transparent; position: relative; left: 530px; text-align: center; background-color: transparent">
+                    <br/>
+
+                    <p:panelMenu style="width:250px; height: 300px; text-align: justify; position: relative; ">
+                        <p:submenu label="Docentes">
+                            <p:menuitem value="Listar todos os docentes" action="/view/docente/List" icon="ui-icon-document" />
+                            <p:menuitem value="Cadastrar um docente" action="#{docenteController.prepareCreate()}" icon="ui-icon-disk"/>
+                        </p:submenu>
+                        <p:submenu  label="Disciplinas">
+                            <p:menuitem value="Listar todas as disciplinas" action="/view/disciplina/List" icon="ui-icon-document" />
+                            <p:menuitem value="Cadastrar uma disciplina" action="#{disciplinaController.prepareCreate()}" icon="ui-icon-disk"/>
+                        </p:submenu>
+                        <p:submenu label="Turmas">
+                            <p:menuitem value="Listar todas as turmas" action="/view/turma/List" icon="ui-icon-document" />
+                            <p:menuitem value="Cadastrar uma turma" action="#{turmaController.prepareCreate()}" icon="ui-icon-disk"/>
+                        </p:submenu>
+
+
+                    </p:panelMenu>
+
+                </p:panel>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
